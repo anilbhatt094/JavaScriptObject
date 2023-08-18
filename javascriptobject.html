@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <title>Javascript Object</title>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            //Object Literal
+            var car ={
+                Name: "Maruti",
+                Modal:"2018",
+                Color:"Black"
+            }
+            document.writeln(car.Name + " " + car.Modal + " " + car.Color);
+            document.write("<br>")
+            //Instance Object
+
+            var comp = new Object();
+            comp.id=1001;
+            comp.name="Anil Bhatt";
+            comp.salary= 10000;
+
+            for(value in comp){
+                document.writeln(comp[value]);
+            }
+
+            document.write("<br>");
+        //object function 
+        function cardetails(name , model , color){
+            this.name = name;
+            this.model = model;
+            this.color = color; 
+            this.updatemodel = updatemodel;
+            function updatemodel(newmodel){
+            this.model=newmodel;
+        }
+    }
+        var crdetail = new cardetails("Maruti" , "2019" , "Balck");
+       
+            document.write(crdetail.name + " " + crdetail.model + " " + crdetail.color);
+        
+        document.write("<br>")
+
+        crdetail.updatemodel(2020);
+        document.write(crdetail.name + " " + crdetail.model + " " + crdetail.color);
+        </script>
+    </body>
+</html>

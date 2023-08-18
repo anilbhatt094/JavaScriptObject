@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <title>Javascript Object Method</title>
+    <head>
+
+    </head>
+    <body>
+        <script>
+
+
+
+
+            //Object Assign
+            var object1 ={
+                a:1,
+                b:2,
+                c:3
+            }
+            var object2 = {
+                d:4,
+                e:5,
+                f:6
+            }
+            
+            var object3 = Object.assign({c:5 , d:7}, object1)
+            console.log(object1 , object3);
+
+            //Object Create
+            function fruit(){
+                this.name = "Grapes";
+            }
+            function fun(){
+                fruit.call(this);
+            }
+            fun.prototype = Object.create(fruit.prototype);
+            const app = new fun()
+            console.log(app);
+
+            //Object Freeze
+            const object4 = {
+                age:25
+            }
+            const object5 = Object.freeze(object4);
+            console.log(object5.age);
+            console.log(Object.isFrozen(object5));
+
+            //Object.is
+            const object6 ={
+                name: "Anil Bhatt"
+            }
+            const object7={
+                name: "Anil"
+            }
+            console.log(Object.is(object6.name,object7.name));
+
+            //Object isExtensible
+            const object8 = {
+
+            }
+            console.log(Object.is(object8));
+            console.log(Object.isExtensible(object8));
+
+            //Object Seal
+            const object9={
+                name: "abc"
+            }
+            const object10 = Object.seal(object9);
+            object10.name = "def";
+            console.log(object10.name);
+            delete object10.name;
+            console.log(object10.name);
+            console.log(Object.isSealed(object10));
+
+            //Object Value
+
+            const object11 = {
+                a:"Anil",
+                b: 12,
+                c: true
+
+            }
+            console.log(Object.values(object1));
+
+           
+           
+        </script>
+    </body>
+</html>
